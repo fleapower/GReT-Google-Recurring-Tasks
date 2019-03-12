@@ -16,10 +16,10 @@ To use the script:
 	run at midnight and recur the tasks.  You may modify the function below
 	to set up a trigger at a different time and/or interval or set up the
 	trigger manually.  To have the trigger set up automatically:
-		1) Click Run -> Run Function -> createDailyTrigger
-		2) Authorization Required -> Review Permissions
-		3) Select the appropriate account
-		4) Allow
+	- Click Run -> Run Function -> createDailyTrigger
+	- Authorization Required -> Review Permissions
+	- Select the appropriate account
+	- Allow
 		
 ===== SYNTAX =====
  
@@ -27,14 +27,14 @@ To recur on a set interval after task completion, use r:##x
 For a specific day of the week or month, use r:xDD
 For a specific date of the year, use r:yMMDD
 To keep the annotation order straight in your mind, think of the syntax this way:
-	Recur after task completion, "Recur every 4 days."  The string would be r:04d ('d' is last, just like in the sentence)
-	Recur on the same day of the week, "Recur weekly on the 5th day."  The string would be r:w05 ('w' is first)
+	- Recur after task completion, "Recur every 4 days."  The string would be r:04d ('d' is last, just like in the sentence)
+	- Recur on the same day of the week, "Recur weekly on the 5th day."  The string would be r:w05 ('w' is first)
 More examples:
-	Every day:  r:01d
-	Every two days:  r:02d
-	Every three weeks:  r:03w
-	Every three months:  r:03m
-	Every Tuesday:  r:w03
-	28th of each month:  r:m28
-	Every two years:  r:01y
-	Every year on a August 10th:  r:y0810
+	- Every day:  r:01d
+	- Every two days:  r:02d
+	- Every three weeks:  r:03w
+	- Every three months:  r:03m
+	- Every Tuesday:  r:w03
+	- 28th of each month:  r:m28
+	- Every two years:  r:01y
+	- Every year on a August 10th:  r:y0810
