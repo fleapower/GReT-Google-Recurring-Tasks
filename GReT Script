@@ -164,8 +164,8 @@ function DuplicateRecTask() {
           if (Archive = 1) {
             sheet.appendRow([oldtask.title,oldtask.due,oldtask.completed,oldtask.notes,taskList.title]);
             oldtask.deleted = "True";
-            var updatedTask = Tasks.Tasks.update(oldtask, TASK_LIST_ID, TASK_ID);
           }
+          var updatedTask = Tasks.Tasks.update(oldtask, TASK_LIST_ID, TASK_ID);
         }
       }
     }
