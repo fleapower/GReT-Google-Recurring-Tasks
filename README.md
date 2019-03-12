@@ -1,7 +1,7 @@
 # GReT (Google Recurring Tasks)
 A Google script to create recurring tasks without relying upon a Chrome extension, or an Android or iOS app.  Since the recurrence is managed by Google scripts, the recurrence is is universal.  That is, it will work regardless of app or even without an app.
 
-To use the script:
+## Setup
 1)  Copy the Google sheet with the GReT script into your Google Drive:
 	- Go to https://docs.google.com/spreadsheets/d/1vmQA7QvmNIPwdK_KUAfLXzmd7rwMb5F9PryI5Eg6vJI/edit?usp=sharing
 	- File -> Make a Copy...
@@ -20,7 +20,8 @@ To use the script:
 	- Authorization Required -> Review Permissions
 	- Select the appropriate account
 	- Allow
-SYNTAX
+	
+## Syntax
 To recur on a set interval after task completion, use r:##x
 For a specific day of the week or month, use r:xDD
 For a specific date of the year, use r:yMMDD
