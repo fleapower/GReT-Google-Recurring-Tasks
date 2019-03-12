@@ -21,7 +21,7 @@ To use the script:
 		3) Select the appropriate account
 		4) Allow
 		
-***** SYNTAX *****
+===== SYNTAX =====
  
 To recur on a set interval after task completion, use r:##x
 For a specific day of the week or month, use r:xDD
