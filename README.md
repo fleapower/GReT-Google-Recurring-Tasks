@@ -35,4 +35,4 @@ More examples:
 	Every Tuesday:  r:w03
 	28th of each month:  r:m28
 	Every two years:  r:01y
-	Every year on a August 10th:  r:y0810
+	Every year on a August 10th:  r:y0810 
