@@ -3,14 +3,14 @@ A Google script to create recurring tasks without relying upon a Chrome extensio
 
 ## Setup
 1)  Copy the Google sheet with the GReT script into your Google Drive:
-	- Go to https://docs.google.com/spreadsheets/d/1vmQA7QvmNIPwdK_KUAfLXzmd7rwMb5F9PryI5Eg6vJI/edit?usp=sharing
-	- File -> Make a Copy...
-	- (Optional) Change the Name and/or Folder
+	1. Go to https://docs.google.com/spreadsheets/d/1vmQA7QvmNIPwdK_KUAfLXzmd7rwMb5F9PryI5Eg6vJI/edit?usp=sharing
+	2. File -> Make a Copy...
+	3. (Optional) Change the Name and/or Folder
 2)  Set up your preferences:
-	- Tools -> Script editor
-	- In the DuplicateRecTask function:
-		Set your time zone (TZOffset): 5 is EST, 8 is PST
-		Set Archive variable (1 will archive your tasks to the Archive spreadsheet and delete them from Google tasks, 0 will do nothing)
+	1. Tools -> Script editor
+	2. In the DuplicateRecTask function:
+		- Set your time zone (TZOffset): 5 is EST, 8 is PST
+		- Set Archive variable (1 will archive your tasks to the Archive spreadsheet and delete them from Google tasks, 0 will do nothing)
 3)  Set the trigger:
 	The function createDailyTrigger will automatically set up a trigger to
 	run at midnight and recur the tasks.  You may modify the function below
