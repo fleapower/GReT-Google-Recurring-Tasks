@@ -20,8 +20,8 @@ To use the script:
 	- Authorization Required -> Review Permissions
 	- Select the appropriate account
 	- Allow
-
-<u><b>SYNTAX</u></b>
+<p>
+<b>SYNTAX</b>
 <p>
 To recur on a set interval after task completion, use r:##x
 For a specific day of the week or month, use r:xDD
