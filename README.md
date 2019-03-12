@@ -30,9 +30,9 @@ To keep the annotation order straight in your mind, think of the syntax this way
 	<br>Recur after task completion, "Recur every 4 days."  The string would be r:04d ('d' is last, just like in the sentence)
 	<br>Recur on the same day of the week, "Recur weekly on the 5th day."  The string would be r:w05 ('w' is first)
 More examples:
-<br>	Every day:  r:01d
-<br>	Every two days:  r:02d
-<br>	Every three weeks:  r:03w
+	Every day:  r:01d
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Every two days:  r:02d
+<br>&nbsp;Every three weeks:  r:03w
 <br>	Every three months:  r:03m
 <br>	Every Tuesday:  r:w03
 <br>	28th of each month:  r:m28
