@@ -20,9 +20,7 @@ To use the script:
 	- Authorization Required -> Review Permissions
 	- Select the appropriate account
 	- Allow
-
 SYNTAX
-
 To recur on a set interval after task completion, use r:##x
 For a specific day of the week or month, use r:xDD
 For a specific date of the year, use r:yMMDD
