@@ -28,7 +28,7 @@ A Google script to create recurring tasks without relying upon a Chrome extensio
 To keep the annotation order straight in your mind, think of the syntax this way:
 	- Recur after task completion, "Recur every 4 days."  The string would be r:04d ('d' is last, just like in the sentence)
 	- Recur on the same day of the week, "Recur weekly on the 5th day."  The string would be r:w05 ('w' is first)
-<br>More examples:
+### More examples:
 	- Every day:  r:01d
 	- Every two days:  r:02d
 	- Every three weeks:  r:03w
