@@ -164,7 +164,7 @@ function DuplicateRecTask() {
             var updatedTask = Tasks.Tasks.update(oldtask, TASK_LIST_ID, TASK_ID);
           }
           // If Archive set to 1, archive all completed tasks to spreadsheet (recurring or not)
-          if (Archive = 1) {
+          if (Archive == 1) {
             sheet.appendRow([oldtask.title,oldtask.due,oldtask.completed,oldtask.notes,taskList.title]);
             oldtask.deleted = "True";
           }
