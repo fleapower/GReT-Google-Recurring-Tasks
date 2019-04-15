@@ -1,7 +1,7 @@
 /*
 
-v. 1.41
-18MAR19
+v. 1.5
+15APR19
 
 # GReT (Google Recurring Tasks)
 A Google script to create recurring tasks without relying upon a Chrome extension, or an Android or iOS app.  Since the recurrence is managed by Google scripts, the recurrence is is universal.  That is, it will work regardless of app or even without an app.
@@ -62,7 +62,7 @@ function DuplicateRecTask() {
   // TZOffset and Archive need to be set:
   // Set your local time zone offset:  5 for EST, 8 for PST
   var TZOffset = 5;
-  // Set Archive to 1 if you want to move completed tasks into the Archive spreadsheet and deleted from tasks; otherwise they will be marked complete
+  // Set Archive to 1 if you want to move completed tasks into the Archive spreadsheet and deleted from tasks; otherwise they will be just remain marked complete
   var Archive = 1;
   
   var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -71,23 +71,21 @@ function DuplicateRecTask() {
   var Today = new Date();
   var Dup_Pause = 1; // variable to set up pause to prevent quota errors
   
-  Today.setDate(Today.getDate());
-  Today.setHours(Today.getHours()-TZOffset);
+  Today.setDate(Today.getDate()+1);
   Today = Today.toISOString();
-  Logger.log(Today)
-  if (taskLists.items) {
+    if (taskLists.items) {
     for (var i = 0; i < taskLists.items.length; i++) {
-      Dup_Pause++;
-      if (Dup_Pause>5) {
-        Utilities.sleep(2000); // sleep for two seconds every five tasks to prevent quota errors
-        Dup_Pause=1;
-      }
       var taskList = taskLists.items[i];
       var TASK_LIST_ID = taskList.id;
       // var tasks = Tasks.Tasks.list(TASK_LIST_ID,{'completedMin':'2010-08-09T10:57:00.000-08:00','showHidden':'True'});
       var tasks = Tasks.Tasks.list(TASK_LIST_ID,{'completedMax':Today,'showHidden':'True'});
       if (tasks.items) {
         for (var j = 0; j < tasks.items.length; j++) {
+          Dup_Pause++;
+          if (Dup_Pause>10) {
+            Utilities.sleep(2000); // sleep for two seconds to prevent quota errors
+            Dup_Pause=1;
+          }
           var task = tasks.items[j]
           var TASK_ID = task.id;
 
@@ -136,7 +134,7 @@ function DuplicateRecTask() {
                   break;
                 case 'm':
                   var AddMonth = (dueDate.getDate() < RecInt - 1) ? 0:1;
-                  dueDate.setMonth(dueDate.getMonth()+AddMonth,RecInt-1);
+                  dueDate.setMonth(dueDate.getMonth()+AddMonth,RecInt);
                   break;
                 case 'y':
                   var RecMo = RecInt;
@@ -144,7 +142,7 @@ function DuplicateRecTask() {
                   var LastDay = new Date(dueDate.getFullYear(), dueDate.getMonth() + 1, 0);
                   var AddLast = (dueDate.getDate() == LastDay.getDate()) ? dueDate.getDate():0;
                   var AddYear = ((dueDate.getMonth() + 1 >= RecMo) || (dueDate.getMonth() + 2 == RecMo && dueDate.getDate() < RecDay + AddLast)) ? 1:0;
-                  dueDate.setFullYear(dueDate.getFullYear() + AddYear, RecMo-1, RecDay-1);
+                  dueDate.setFullYear(dueDate.getFullYear() + AddYear, RecMo-1, RecDay);
                   break;
               }
             }
